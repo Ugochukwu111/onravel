@@ -1,26 +1,537 @@
 @import "tailwindcss";
 
+/* =========================================================
+   ONRAVEL — DESIGN TOKENS
+   Fashion • Custom Wear • Scrubs • African Contemporary
+   ========================================================= */
+
+@theme {
+  /* -------------------------------------------------------
+     Font Families
+     ------------------------------------------------------- */
+  --font-body: var(--font-dm-sans);
+  --font-heading: var(--font-instrument-serif);
+
+  /* -------------------------------------------------------
+     Brand
+     ------------------------------------------------------- */
+  --color-brand-black: #0b0b0b;
+  --color-brand-ink: #141414;
+  --color-brand-charcoal: #1d1d1d;
+
+  --color-brand-white: #ffffff;
+  --color-brand-ivory: #fafaf8;
+
+  /* -------------------------------------------------------
+     Signature Accent
+     ------------------------------------------------------- */
+  --color-brand-bronze: #b08d57;
+  --color-brand-bronze-light: #d1b98a;
+  --color-brand-bronze-dark: #806438;
+
+  /* -------------------------------------------------------
+     Warm Neutrals
+     ------------------------------------------------------- */
+  --color-sand: #e9e4dc;
+  --color-stone: #b8b1a7;
+
+  /* -------------------------------------------------------
+     Grayscale
+     ------------------------------------------------------- */
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f4f4f4;
+  --color-neutral-200: #e8e8e8;
+  --color-neutral-300: #d6d6d6;
+  --color-neutral-400: #b5b5b5;
+  --color-neutral-500: #8a8a8a;
+  --color-neutral-600: #6a6a6a;
+  --color-neutral-700: #4a4a4a;
+  --color-neutral-800: #2d2d2d;
+  --color-neutral-900: #171717;
+
+  /* -------------------------------------------------------
+     Feedback
+     ------------------------------------------------------- */
+
+  /* Success */
+  --color-success: #2f7d4a;
+  --color-success-light: #e8f3ec;
+  --color-success-dark: #205936;
+
+  /* Error */
+  --color-error: #c83c3c;
+  --color-error-light: #fbeaea;
+  --color-error-dark: #962c2c;
+
+  /* Warning */
+  --color-warning: #b7791f;
+  --color-warning-light: #fff4de;
+  --color-warning-dark: #855815;
+
+  /* Information */
+  --color-info: #356d9b;
+  --color-info-light: #eaf2f8;
+  --color-info-dark: #274f70;
+}
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+.dark {
+  color-scheme: dark;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================================================
+   RESET / BASE
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background-color: var(--color-brand-ivory);
+  color: var(--color-brand-black);
+  font-family: var(--font-body);
+
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+.dark body {
+  background-color: var(--color-brand-black);
+  color: var(--color-brand-ivory);
+}
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  text-wrap: balance;
+  color: var(--color-brand-black);
+}
+
+/* ---------------------------------------------------------
+   Heading hierarchy
+   --------------------------------------------------------- */
+
+h1 {
+  font-size: clamp(3rem, 2.1rem + 4vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  font-size: clamp(2.25rem, 1.7rem + 2.5vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: clamp(1.75rem, 1.45rem + 1.25vw, 2.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+h4 {
+  font-size: clamp(1.4rem, 1.2rem + 0.75vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+h5 {
+  font-size: clamp(1.2rem, 1.1rem + 0.4vw, 1.5rem);
+  line-height: 1.2;
+}
+
+h6 {
+  font-size: 1.125rem;
+  line-height: 1.25;
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  line-height: clamp(1.6rem, 1.48rem + 0.45vw, 1.8rem);
+  font-weight: 400;
+  color: var(--color-neutral-700);
+  text-wrap: pretty;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+input,
+textarea,
+select {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   IMAGES / MEDIA
+   ========================================================= */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+/* =========================================================
+   TEXT SELECTION
+   ========================================================= */
+
+::selection {
+  background-color: var(--color-brand-bronze);
+  color: var(--color-brand-white);
+}
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-bronze);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-neutral-400) var(--color-brand-ivory);
+}
+
+.dark {
+  scrollbar-color: var(--color-neutral-600) var(--color-brand-black);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-400);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-bronze);
+}
+
+.dark::-webkit-scrollbar-track {
+  background: var(--color-brand-black);
+}
+
+.dark::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-600);
+}
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
+input,
+textarea,
+select {
+  border-radius: 0;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-neutral-500);
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: var(--color-neutral-500);
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================
+   ONRAVEL UTILITIES
+   Keep these few and intentional.
+   ========================================================= */
+
+@utility container {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 3vw, 4rem);
+}
+
+@utility section-padding {
+  padding-block: clamp(4rem, 8vw, 8rem);
+}
+
+@utility eyebrow {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-brand-bronze);
+}
+
+/* =========================================================
+   DARK MODE HELPERS
+   ========================================================= */
+
+@utility surface {
+  background-color: var(--color-brand-white);
+  color: var(--color-brand-black);
+
+  .dark & {
+    background-color: var(--color-brand-ink);
+    color: var(--color-brand-ivory);
+  }
+}
+
+@utility surface-muted {
+  background-color: var(--color-neutral-100);
+  color: var(--color-brand-black);
+
+  .dark & {
+    background-color: var(--color-brand-ink);
+    color: var(--color-brand-ivory);
+  }
+}
+
+@utility border-default {
+  border-color: var(--color-neutral-200);
+
+  .dark & {
+    border-color: var(--color-brand-charcoal);
+  }
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  min-height: 2.75rem;
+  padding-inline: 1.25rem;
+
+  border: 1px solid transparent;
+  border-radius: 0;
+
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    transform 120ms ease;
+}
+
+/* Primary */
+
+@utility btn-primary {
+  background-color: var(--color-brand-black);
+  color: var(--color-brand-white);
+  border-color: var(--color-brand-black);
+
+  &:hover {
+    background-color: var(--color-brand-charcoal);
+    border-color: var(--color-brand-charcoal);
+  }
+
+  &:active {
+    background-color: var(--color-brand-ink);
+    border-color: var(--color-brand-ink);
+    transform: translateY(1px);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+  }
+}
+
+/* Inverse / Outlined */
+
+@utility btn-inverse {
+  background-color: transparent;
+  color: var(--color-brand-black);
+  border: 2px solid var(--color-brand-black);
+
+  &:hover {
+    background-color: var(--color-brand-black);
+    color: var(--color-brand-white);
+  }
+
+  &:active {
+    background-color: var(--color-brand-ink);
+    color: var(--color-brand-white);
+    border-color: var(--color-brand-ink);
+    transform: translateY(1px);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+  }
+}
+
+/* =========================================================
+   TEXT LINKS
+   ========================================================= */
+
+@utility text-link {
+  position: relative;
+  display: inline;
+  
+  color: var(--color-brand-black);
+  font-family: var(--font-body);
+  font-weight: 500;
+  text-decoration: none;
+
+  transition: color 180ms ease;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.2rem;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: var(--color-brand-black);
+
+    transform: scaleX(1);
+    transform-origin: right;
+
+    transition:
+      transform 220ms ease,
+      background-color 180ms ease;
+  }
+
+  &:hover {
+    color: var(--color-brand-bronze);
+  }
+
+  &:hover::after {
+    background-color: var(--color-brand-bronze);
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  &:focus-visible {
+    color: var(--color-brand-bronze);
+  }
 }
