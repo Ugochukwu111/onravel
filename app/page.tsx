@@ -2,8 +2,8 @@
 
 export default function Home() {
   return (
-     <main>
-
+     <main className="flex-1">
+     <h1>hey</h1>
      </main>
   );
 }
