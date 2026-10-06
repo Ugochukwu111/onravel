@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: "Onravel",
+  name: "Onravel | Custom Wears, Scrubs & African Fashion in Nigeria",
   description:
-    "Contemporary African fashion designed to make a statement.",
+    "Onravel creates custom-made scrubs, African wears, caftans and senator wears, delivered across Nigeria.",
 
   url: "https://onravel.com",
 
