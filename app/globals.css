@@ -197,7 +197,6 @@ p {
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   line-height: clamp(1.6rem, 1.48rem + 0.45vw, 1.8rem);
   font-weight: 400;
-  color: var(--color-neutral-700);
   text-wrap: pretty;
 }
 
@@ -482,6 +481,28 @@ textarea::placeholder {
   }
 }
 
+@utility btn-inverse-2 {
+  color: var(--color-brand-white);
+  border: 2px solid var(--color-brand-white);
+
+  &:hover {
+    background-color: var(--color-brand-white);
+    color: var(--color-brand-black);
+    border-color: var(--color-brand-white);
+  }
+
+  &:active {
+    background-color: var(--color-brand-ivory);
+    color: var(--color-brand-black);
+    border-color: var(--color-brand-ivory);
+    transform: translateY(1px);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+  }
+}
+
 /* =========================================================
    TEXT LINKS
    ========================================================= */
@@ -529,4 +550,32 @@ textarea::placeholder {
   &:focus-visible {
     color: var(--color-brand-bronze);
   }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 35%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0.15) 65%,
+    transparent 100%
+  );
+
+  transform: translateX(-100%);
+  animation: shimmer 1.6s linear infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.text-shadow {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.text-shadow-sm {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
