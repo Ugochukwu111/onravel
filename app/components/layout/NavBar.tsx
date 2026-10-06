@@ -42,7 +42,7 @@ export default function Navbar() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-neutral-200 bg-brand-ivory/95 backdrop-blur-md">
+    <header className="fixed top-0 left-0 z-50 w-full top-0 z-50 border-b border-neutral-200 bg-brand-ivory/95 backdrop-blur-md">
       <div className="container">
         <nav
           aria-label="Main navigation"
