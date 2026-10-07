@@ -1,4 +1,3 @@
-import Link from "next/link";
 import ImageSkeleton from "@/app/components/ui/VisualOptimizers/ImageSkeleton";
 import FadeUp from "@/app/components/animations/FadeUp";
 import PopIn from "@/app/components/animations/PopIn";
