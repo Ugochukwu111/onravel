@@ -56,7 +56,7 @@ export default function Categories() {
 
             <Link
               href="/shop"
-              className="btn btn-primary "
+              className="btn btn-primary"
             >
               View all
             </Link>
