@@ -139,12 +139,11 @@ h4,
 h5,
 h6,
 p {
-  margin: 0;
+  margin-bottom: 0em;
 }
 
 h1,
 h2,
-h3,
 h4,
 h5,
 h6 {
@@ -171,7 +170,7 @@ h2 {
 }
 
 h3 {
-  font-size: clamp(1.75rem, 1.45rem + 1.25vw, 2.5rem);
+  /* font-size: clamp(1.75rem, 1.45rem + 1.25vw, 2.5rem); */
   line-height: 1.05;
   letter-spacing: -0.02em;
 }
@@ -195,7 +194,7 @@ h6 {
 p {
   font-family: var(--font-body);
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  line-height: clamp(1.6rem, 1.48rem + 0.45vw, 1.8rem);
+  line-height: clamp(1.4rem, 1.48rem + 0.45vw, 1.8rem);
   font-weight: 400;
   text-wrap: pretty;
 }
@@ -578,4 +577,18 @@ textarea::placeholder {
 
 .text-shadow-sm {
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes cta-sweep {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.animate-cta-sweep {
+  animation: cta-sweep 700ms ease-in-out forwards;
 }

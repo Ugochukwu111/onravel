@@ -1,7 +1,8 @@
 import Link from "next/link";
-import ImageSkeleton from "@/app/components/ImageSkeleton";
+import ImageSkeleton from "@/app/components/ui/VisualOptimizers/ImageSkeleton";
 import FadeUp from "@/app/components/animations/FadeUp";
 import PopIn from "@/app/components/animations/PopIn";
+import RotatingCTA from "@/app/home/RotatingCTA";
 
 export default function Hero() {
   return (
@@ -48,15 +49,7 @@ export default function Hero() {
 </FadeUp>
 
 <PopIn delay={0.3} >
-<Link
-  href="/collections"
-  className="btn btn-inverse-2 mt-8 min-w-[300px]"
->
-  Shop
-  <span aria-hidden="true" className="ml-3">
-    →
-  </span>
-</Link>
+ <RotatingCTA />
 </PopIn>
             </div>
         
