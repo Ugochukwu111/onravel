@@ -3,6 +3,7 @@ import Categories from "@/app/home/Categories";
 import CustomWear from "@/app/home/CustomWear";
 import FAQ from "@/app/home/FAQ";
 import ProductCarousel from "@/app/components/ui/product/ProductCarousel";
+import FinalCTA from "@/app/home/FinalCTA";
 
 const kaftans = [
   {
@@ -82,10 +83,12 @@ export default function Home() {
             products={kaftans}
             viewMoreHref="/shop/senator-wears"
           />
+          
         </div>
       </section>
 
       <FAQ />
+      < FinalCTA/>
     </main>
   );
 }
