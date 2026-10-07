@@ -33,8 +33,8 @@ export const siteConfig = {
       href: "/scrubs",
     },
     {
-      label: "Collections",
-      href: "/collections",
+      label: "Shop",
+      href: "/shop",
     },
     {
       label: "About",

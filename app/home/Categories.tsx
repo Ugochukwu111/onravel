@@ -6,21 +6,21 @@ const categories = [
   {
     name: "Scrubs",
     description: "Made for your everyday shift.",
-    href: "/collections/scrubs",
+    href: "/shop/scrubs",
     src: "https://res.cloudinary.com/dy4qtrmgz/video/upload/v1791229857/vid-hero_ck4ivt.mp4",
     poster: "/images/categories/scrubs.jpg",
   },
   {
     name: "African Wears",
     description: "Tradition, tailored your way.",
-    href: "/collections/african-wears",
+    href: "/shop/african-wears",
     src:"https://res.cloudinary.com/dy4qtrmgz/video/upload/v1791278814/african_dasv1p.mp4" ,
     poster: "/images/categories/african-wears.jpg",
   },
   {
     name: "Kaftans",
     description: "Effortless comfort. Refined style.",
-    href: "/collections/caftans",
+    href: "/shop/caftans",
     src: "https://res.cloudinary.com/dy4qtrmgz/video/upload/v1791278728/kaftan_siesac.mp4",
     poster: "/images/categories/caftans.jpg",
   },
@@ -28,7 +28,7 @@ const categories = [
     name: "Senator Wears",
 
     description: "Sharp looks, made for you.",
-    href: "/collections/senator-wears",
+    href: "/shop/senator-wears",
     src: "https://res.cloudinary.com/dy4qtrmgz/video/upload/v1791278721/senator_bro3hk.mp4",
     poster: "/images/categories/senator-wears.jpg",
   },
@@ -55,8 +55,8 @@ export default function Categories() {
 </div>
 
             <Link
-              href="/collections"
-              className="text-link hidden shrink-0 sm:inline-block"
+              href="/shop"
+              className="btn btn-primary "
             >
               View all
             </Link>
@@ -110,7 +110,7 @@ export default function Categories() {
 
         {/* Mobile view-all */}
         <div className="mt-6 sm:hidden">
-          <Link href="/collections" className="text-link text-sm">
+          <Link href="/shop" className="text-link text-sm">
             View all collections
           </Link>
         </div>

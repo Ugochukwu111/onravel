@@ -11,7 +11,7 @@ import { siteConfig } from "@/app/config/site";
 
 const quickLinks = [
   { label: "Home", href: "/" },
-  { label: "Products", href: "/products" },
+  { label: "Shop", href: "/shop" },
   { label: "About Us", href: "/about" },
   { label: "Contact Us", href: "/contact" },
   { label: "FAQ", href: "/faq" },

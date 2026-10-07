@@ -17,7 +17,7 @@ import { siteConfig } from "@/app/config/site";
 
 const navigation = [
   { label: "Home", href: "/" },
-  { label: "Products", href: "/products" },
+  { label: "Shop", href: "/shop" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];

@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const ctas = [
-  { label: "Shop Kaftans", href: "/collections/kaftans" },
-  { label: "Shop Scrubs", href: "/collections/scrubs" },
-  { label: "Shop African Wears", href: "/collections/african-wears" },
-  { label: "Shop Senator Wears", href: "/collections/senator-wears" },
+  { label: "Shop Kaftans", href: "/shop/kaftans" },
+  { label: "Shop Scrubs", href: "/shop/scrubs" },
+  { label: "Shop African Wears", href: "/shop/african-wears" },
+  { label: "Shop Senator Wears", href: "/shop/senator-wears" },
 ];
 
 export default function RotatingCTA() {
@@ -64,6 +64,5 @@ export default function RotatingCTA() {
     </Link>
   );
 }
-
 
 

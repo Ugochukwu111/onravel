@@ -17,7 +17,7 @@ export default function ProductCard({
   return (
     <article>
       <Link
-        href={`/products/${slug}`}
+        href={`/shop/${slug}`}
         className="group block"
         aria-label={`View ${name}`}
       >
@@ -41,5 +41,4 @@ export default function ProductCard({
     </article>
   );
 }
-
 
