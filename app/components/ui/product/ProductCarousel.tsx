@@ -1,7 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import ProductCard from "@/app/components/ui/product/ProductCard";
 
 type Product = {
@@ -15,11 +16,13 @@ type Product = {
 type ProductCarouselProps = {
   title: string;
   products: Product[];
+  viewMoreHref?: string;
 };
 
 export default function ProductCarousel({
   title,
   products,
+  viewMoreHref = "/shop",
 }: ProductCarouselProps) {
   const carouselRef = useRef<HTMLDivElement>(null);
 
@@ -82,7 +85,17 @@ export default function ProductCarousel({
           </div>
         ))}
       </div>
+
+      <div className="mt-4 flex justify-end">
+        <Link href={viewMoreHref} className="btn btn-primary group">
+          See more
+          <ArrowRight
+            aria-hidden="true"
+            size={16}
+            className="transition-transform group-hover:translate-x-1"
+          />
+        </Link>
+      </div>
     </section>
   );
 }
-

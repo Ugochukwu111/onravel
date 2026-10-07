@@ -1,6 +1,7 @@
 import Hero from "@/app/home/Hero";
 import Categories from "@/app/home/Categories";
 import CustomWear from "@/app/home/CustomWear";
+import FAQ from "@/app/home/FAQ";
 import ProductCarousel from "@/app/components/ui/product/ProductCarousel";
 
 const kaftans = [
@@ -70,22 +71,21 @@ export default function Home() {
       <CustomWear />
 
       <section className="section-padding">
-        <div className="container">
+        <div className="container space-y-8 md:space-y-10">
           <ProductCarousel
             title="Kaftans"
             products={kaftans}
+            viewMoreHref="/shop/caftans"
           />
-        </div>
-      </section>
-      
-      <section className="section-padding">
-        <div className="container">
           <ProductCarousel
             title="Senators"
             products={kaftans}
+            viewMoreHref="/shop/senator-wears"
           />
         </div>
       </section>
+
+      <FAQ />
     </main>
   );
 }
