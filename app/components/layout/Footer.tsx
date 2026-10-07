@@ -18,7 +18,7 @@ const quickLinks = [
 ];
 
 const informationLinks = [
-  { label: "Returns", href: "/returns" },
+  { label: "Returns", href: "/faq#returns" },
   { label: "Custom Size", href: "/custom-size" },
   { label: "Product Care", href: "/product-care" },
 ];
