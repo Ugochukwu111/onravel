@@ -100,79 +100,83 @@ const navigationItems = [
   { id: "contact", title: "Send an email" },
 ];
 
-export default function FAQ() {
+export default function FAQ({ pageTop = false }: { pageTop?: boolean }) {
   return (
     <section
-      className="bg-white py-12 text-brand-black sm:py-16"
+      className={`bg-white text-brand-black ${
+        pageTop
+          ? "page-top-padding pb-12 sm:pb-16"
+          : "py-12 sm:py-16"
+      }`}
       aria-label="Frequently asked questions"
     >
-      <div className="container mx-auto grid w-full max-w-5xl gap-8 px-5 sm:px-8 md:grid-cols-[minmax(220px,263px)_minmax(0,1fr)] md:gap-16">
-        <nav
-          aria-label="FAQ categories"
-          className="h-fit border border-neutral-200 px-5 sm:px-6"
-        >
-          <ul className="flex gap-5 overflow-x-auto md:block md:overflow-visible">
-            {navigationItems.map(({ id, title }) => (
-              <li
-                key={id}
-                className="shrink-0 border-b border-neutral-200 last:border-b-0"
-              >
-                {id === "contact" ? (
-                  <a
-                    href={`mailto:${siteConfig.contact.email}`}
-                    className="block py-3 text-sm text-neutral-600 transition-colors hover:text-brand-black md:py-3.5"
-                  >
-                    {title}
-                  </a>
-                ) : (
-                  <Link
-                    href={`#${id}`}
-                    className="block py-3 text-sm transition-colors hover:text-neutral-500 md:py-3.5"
-                  >
-                    {title}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-        </nav>
+      <div className="container mx-auto w-full max-w-5xl px-5 sm:px-8">
+        <h1 className="faq-page-title mb-8">FAQs</h1>
+        <div className="grid gap-8 md:grid-cols-[minmax(220px,263px)_minmax(0,1fr)] md:gap-16">
+          <nav
+            aria-label="FAQ categories"
+            className="h-fit border border-neutral-200 px-5 sm:px-6"
+          >
+            <ul className="flex gap-5 overflow-x-auto md:block md:overflow-visible">
+              {navigationItems.map(({ id, title }) => (
+                <li
+                  key={id}
+                  className="shrink-0 border-b border-neutral-200 last:border-b-0"
+                >
+                  {id === "contact" ? (
+                    <a
+                      href={`mailto:${siteConfig.contact.email}`}
+                      className="block py-3 text-sm text-neutral-600 transition-colors hover:text-brand-black md:py-3.5"
+                    >
+                      {title}
+                    </a>
+                  ) : (
+                    <Link
+                      href={`#${id}`}
+                      className="block py-3 text-sm transition-colors hover:text-neutral-500 md:py-3.5"
+                    >
+                      {title}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-        <div className="min-w-0">
-          {faqSections.map(({ id, title, questions }) => (
-            <section
-              key={id}
-              id={id}
-              className="scroll-mt-24 pb-4"
-              aria-labelledby={`${id}-heading`}
-            >
-              <h2
-                id={`${id}-heading`}
-                className="mb-3 font-sans text-base font-normal leading-6 tracking-normal"
+          <div className="min-w-0">
+            {faqSections.map(({ id, title, questions }) => (
+              <section
+                key={id}
+                id={id}
+                className="scroll-mt-24 pb-4"
+                aria-labelledby={`${id}-heading`}
               >
-                {title}
-              </h2>
-              <div>
-                {questions.map(({ question, answer }) => (
-                  <details
-                    key={question}
-                    className="group border-b border-neutral-200"
-                  >
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-2.5 text-xs leading-5 marker:hidden [&::-webkit-details-marker]:hidden">
-                      <span>{question}</span>
-                      <ChevronDown
-                        aria-hidden="true"
-                        className="size-3.5 shrink-0 transition-transform group-open:rotate-180"
-                      />
-                    </summary>
-                    <p className="max-w-2xl pb-3 pr-6 text-xs leading-5 text-neutral-600">
-                      {answer}
-                    </p>
-                  </details>
-                ))}
-              </div>
-            </section>
-          ))}
-          <span id="contact" className="block scroll-mt-24" />
+                <h2 id={`${id}-heading`} className="faq-section-heading mb-3">
+                  {title}
+                </h2>
+                <div>
+                  {questions.map(({ question, answer }) => (
+                    <details
+                      key={question}
+                      className="group border-b border-neutral-200"
+                    >
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-2.5 text-xs leading-5 marker:hidden [&::-webkit-details-marker]:hidden">
+                        <span>{question}</span>
+                        <ChevronDown
+                          aria-hidden="true"
+                          className="size-3.5 shrink-0 transition-transform group-open:rotate-180"
+                        />
+                      </summary>
+                      <p className="max-w-2xl pb-3 pr-6 text-xs leading-5 text-neutral-600">
+                        {answer}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </section>
+            ))}
+            <span id="contact" className="block scroll-mt-24" />
+          </div>
         </div>
       </div>
     </section>

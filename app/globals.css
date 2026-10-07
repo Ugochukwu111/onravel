@@ -167,12 +167,14 @@ h2 {
   font-size: clamp(2.25rem, 1.7rem + 2.5vw, 4rem);
   line-height: 1;
   letter-spacing: -0.025em;
+  margin-bottom: 0.25em;
 }
 
 h3 {
   /* font-size: clamp(1.75rem, 1.45rem + 1.25vw, 2.5rem); */
   line-height: 1.05;
   letter-spacing: -0.02em;
+  margin-bottom: 0.25em;
 }
 
 h4 {
@@ -362,6 +364,10 @@ textarea::placeholder {
   padding-block: clamp(4rem, 8vw, 8rem);
 }
 
+@utility page-top-padding {
+  padding-top: clamp(5rem, 8vw, 7rem);
+}
+
 @utility eyebrow {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -369,6 +375,22 @@ textarea::placeholder {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-brand-bronze);
+}
+
+.faq-page-title {
+  font-family: var(--font-body);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.faq-section-heading {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5rem;
 }
 
 /* =========================================================
