@@ -69,7 +69,7 @@ export default function ContactPage() {
               <ContactCard
                 title="Instagram"
                 href={siteConfig.social.instagram}
-                image="/images/contact/instagram.jpg"
+                image="https://res.cloudinary.com/afsrpjwx/image/upload/v1791457554/ig.jpg"
                 alt="Onravel on Instagram"
                 icon={FaInstagram}
               />
@@ -77,7 +77,7 @@ export default function ContactPage() {
               <ContactCard
                 title="WhatsApp"
                 href={siteConfig.contact.whatsapp}
-                image="/images/contact/whatsapp.jpg"
+                image="https://res.cloudinary.com/afsrpjwx/image/upload/v1791457554/tiktok.jpg"
                 alt="Contact Onravel on WhatsApp"
                 icon={FaWhatsapp}
               />
@@ -85,7 +85,7 @@ export default function ContactPage() {
               <ContactCard
                 title="TikTok"
                 href={siteConfig.social.tiktok}
-                image="/images/contact/tiktok.jpg"
+                image="https://res.cloudinary.com/afsrpjwx/image/upload/v1791457554/tiktok.jpg"
                 alt="Onravel on TikTok"
                 icon={FaTiktok}
               />
