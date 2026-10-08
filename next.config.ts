@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+
   // 1. Remove the slower React Compiler entirely
   reactCompiler: false, 
    allowedDevOrigins: ["192.168.1.3"],
@@ -11,6 +12,15 @@ const nextConfig: NextConfig = {
     removeConsole: process.env.NODE_ENV === "production" 
       ? { exclude: ["error"] } 
       : false,
+      
+  },
+   images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+    ],
   },
 };
 

@@ -16,7 +16,8 @@ const stories = [
     delivery: "September 12, 2026",
     quote:
       "I needed scrubs that actually fit the way I work. Onravel took my measurements and delivered exactly what I wanted.",
-    video: "YOUR_DAVID_VIDEO_URL",
+    video:
+      "https://res.cloudinary.com/afsrpjwx/video/upload/v1791417386/scrub-woman-2.mp4",
     poster: "/images/custom-wear/dr-david.jpg",
   },
   {
@@ -28,7 +29,8 @@ const stories = [
     delivery: "September 18, 2026",
     quote:
       "The fit was exactly what I wanted, and the process was so easy from measurement to delivery.",
-    video: "YOUR_AMAKA_VIDEO_URL",
+    video:
+      "https://res.cloudinary.com/afsrpjwx/video/upload/v1791417379/couples.mp4",
     poster: "/images/custom-wear/amaka.jpg",
   },
   {
@@ -40,8 +42,113 @@ const stories = [
     delivery: "September 20, 2026",
     quote:
       "We wanted a consistent look for our clinical team without compromising comfort. Onravel delivered.",
-    video: "YOUR_HOSPITAL_VIDEO_URL",
+    video:
+      "https://res.cloudinary.com/afsrpjwx/video/upload/v1791417379/scrub-man-1.mp4",
     poster: "/images/custom-wear/hospital.jpg",
+  },
+  {
+    id: 4,
+    name: "Onravel Client",
+    role: "Custom Wear",
+    location: "Lagos",
+    order: "Custom Senator",
+    delivery: "September 22, 2026",
+    quote:
+      "The attention to detail made the final piece feel completely personal.",
+    video:
+      "https://res.cloudinary.com/afsrpjwx/video/upload/v1791417384/senator_2.mp4",
+    poster: "/images/custom-wear/senator.jpg",
+  },
+  {
+    id: 5,
+    name: "Onravel Client",
+    role: "Healthcare Professional",
+    location: "Abuja",
+    order: "Custom Scrubs",
+    delivery: "September 24, 2026",
+    quote:
+      "Comfort, fit and style all came together exactly the way I wanted.",
+    video:
+      "https://res.cloudinary.com/afsrpjwx/video/upload/v1791417379/scrub-woman-3.mp4",
+    poster: "/images/custom-wear/scrub-woman.jpg",
+  },
+  {
+    id: 6,
+    name: "Onravel Client",
+    role: "Custom Wear",
+    location: "Lagos",
+    order: "Senator Wear",
+    delivery: "September 26, 2026",
+    quote:
+      "It felt made for me from the first fitting to the final piece.",
+    video:
+      "https://res.cloudinary.com/afsrpjwx/video/upload/v1791417379/senator_3.mp4",
+    poster: "/images/custom-wear/senator-2.jpg",
+  },
+  {
+    id: 7,
+    name: "Onravel Client",
+    role: "Medical Professional",
+    location: "Lagos",
+    order: "Custom Scrubs",
+    delivery: "September 28, 2026",
+    quote:
+      "I wanted something practical enough for work but still stylish. Onravel got it right.",
+    video:
+      "https://res.cloudinary.com/afsrpjwx/video/upload/v1791417379/scrub-women-4.mp4",
+    poster: "/images/custom-wear/scrub-women.jpg",
+  },
+  {
+    id: 8,
+    name: "Onravel Client",
+    role: "Custom Wear",
+    location: "Abuja",
+    order: "African Wear",
+    delivery: "September 30, 2026",
+    quote:
+      "The finished piece had exactly the character I was looking for.",
+    video:
+      "https://res.cloudinary.com/afsrpjwx/video/upload/v1791417384/abada-3.mp4",
+    poster: "/images/custom-wear/abada.jpg",
+  },
+  {
+    id: 9,
+    name: "Onravel Client",
+    role: "Custom Wear",
+    location: "Lagos",
+    order: "African Wear",
+    delivery: "October 2, 2026",
+    quote:
+      "Simple, elegant and made exactly how I imagined it.",
+    video:
+      "https://res.cloudinary.com/afsrpjwx/video/upload/v1791417380/abada.mp4",
+    poster: "/images/custom-wear/abada-2.jpg",
+  },
+  {
+    id: 10,
+    name: "Onravel Client",
+    role: "Medical Professional",
+    location: "Lagos",
+    order: "Custom Scrubs",
+    delivery: "October 4, 2026",
+    quote:
+      "The fit makes such a difference when you're wearing scrubs all day.",
+    video:
+      "https://res.cloudinary.com/afsrpjwx/video/upload/v1791417377/scrub-woman-1.mp4",
+    poster: "/images/custom-wear/scrub-woman-1.jpg",
+  },
+  {
+    id: 11,
+    name: "Onravel Client",
+    role: "Medical Professional",
+    location: "Abuja",
+    order: "Custom Scrubs",
+    delivery: "October 5, 2026",
+    quote:
+      "Everything felt intentional, from the measurements to the final fit.",
+    video:
+      "https://res.cloudinary.com/afsrpjwx/video/upload/v1791417376/scrub-man-2.mp4",
+    poster: "/images/custom-wear/scrub-man-2.jpg",
   },
 ];
 
