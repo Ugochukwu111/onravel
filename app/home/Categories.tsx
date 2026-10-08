@@ -29,7 +29,7 @@ const categories = [
 
     description: "Sharp looks, made for you.",
     href: "/shop/senator-wears",
-    src: "https://res.cloudinary.com/dy4qtrmgz/video/upload/v1791278721/senator_bro3hk.mp4",
+    src: "https://res.cloudinary.com/afsrpjwx/video/upload/v1791415565/onravel-senator-category.mp4",
     poster: "/images/categories/senator-wears.jpg",
   },
 ];
