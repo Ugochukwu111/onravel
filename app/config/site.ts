@@ -17,10 +17,10 @@ export const siteConfig = {
   },
 
   social: {
-    instagram: "",
-    facebook: "",
-    tiktok: "",
-    twitter: "",
+    instagram: "https://www.instagram.com/onravel",
+    facebook: "https://www.facebook.com/onravel",
+    tiktok: "https://www.tiktok.com/@onravel",
+    twitter: "https://twitter.com/onravel",
   },
 
   navigation: [

@@ -30,7 +30,7 @@ export default function AboutPage() {
               </FadeUp>
 
               <FadeUp delay={0.1}>
-                <h1 id="about-onravel-heading">
+                <h1 id="about-onravel-heading" className="text-[clamp(3rem,7vw,6rem)]">
                   Clothing that feels like you.
                 </h1>
               </FadeUp>

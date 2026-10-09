@@ -139,7 +139,7 @@ export default function ContactPage() {
             </FadeUp>
 
             <FadeUp delay={0.1}>
-              <h1 id="contact-heading" className="text-brand-white">
+              <h1 id="contact-heading " className="text-brand-white text-[clamp(3rem,7vw,6rem)]">
                 Let&apos;s talk.
               </h1>
             </FadeUp>
