@@ -9,7 +9,7 @@ import {
   Package,
   X,
 } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
 import logo from "@/public/images/onravel-logo.png";
@@ -37,9 +37,15 @@ const mobileAccountLinks = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
+  const openCart = () => {
+    const url = new URL(window.location.href);
+    url.searchParams.set("cart", "true");
+    router.push(`${url.pathname}${url.search}${url.hash}`, { scroll: false });
+  };
 
   return (
     <header className="fixed top-0 left-0 z-50 w-full top-0 z-50 border-b border-neutral-200 bg-brand-ivory/95 backdrop-blur-md">
@@ -187,8 +193,9 @@ export default function Navbar() {
           <div className="hidden flex-1 justify-end md:flex">
             <ul className="flex items-center gap-2">
               <li>
-                <Link
-                  href="/cart"
+                <button
+                  type="button"
+                  onClick={openCart}
                   aria-label="Cart"
                   title="Cart"
                   className="flex size-10 items-center justify-center text-brand-black transition-colors duration-200 hover:text-brand-bronze focus-visible:text-brand-bronze"
@@ -198,7 +205,7 @@ export default function Navbar() {
                     className="size-[1.15rem]"
                     strokeWidth={1.7}
                   />
-                </Link>
+                </button>
               </li>
 
               <li>
@@ -235,8 +242,9 @@ export default function Navbar() {
 
           {/* Mobile cart */}
           <div className="flex md:hidden">
-            <Link
-              href="/cart"
+            <button
+              type="button"
+              onClick={openCart}
               aria-label="Cart"
               title="Cart"
               className="
@@ -256,7 +264,7 @@ export default function Navbar() {
                 className="size-[1.2rem]"
                 strokeWidth={1.7}
               />
-            </Link>
+            </button>
           </div>
         </nav>
 

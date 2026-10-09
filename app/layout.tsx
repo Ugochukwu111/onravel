@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { DM_Sans, Instrument_Serif } from "next/font/google";
 import {   siteConfig } from "@/app/config/site";
 import Footer from "@/app/components/layout/Footer";
 import WhatsAppIcon from "@/app/components/animations/WhatsAppIcon";
 import Navbar from "@/app/components/layout/NavBar";
+import Cart from "@/app/components/ui/cart/Cart";
 import "./globals.css";
 
 
@@ -38,6 +40,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <Navbar/>
         {children}
+        <Suspense fallback={null}>
+          <Cart />
+        </Suspense>
         <WhatsAppIcon />
       <Footer />
         
