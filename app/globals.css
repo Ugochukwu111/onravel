@@ -347,6 +347,22 @@ textarea::placeholder {
   padding-inline: clamp(1.25rem, 3vw, 4rem);
 }
 
+.engraved-wordmark {
+  color: rgb(128 100 56 / 0.1);
+  filter: blur(1.25px);
+  text-shadow:
+    0 1px 0 rgb(255 255 255 / 0.72),
+    0 -1px 0 rgb(11 11 11 / 0.08);
+}
+
+.account-nav-scroll {
+  scrollbar-width: none;
+}
+
+.account-nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 /* =========================================================
    ONRAVEL UTILITIES
    Keep these few and intentional.

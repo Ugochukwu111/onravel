@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { DM_Sans, Instrument_Serif } from "next/font/google";
-import {   siteConfig } from "@/app/config/site";
-import Footer from "@/app/components/layout/Footer";
-import WhatsAppIcon from "@/app/components/animations/WhatsAppIcon";
-import Navbar from "@/app/components/layout/NavBar";
+import { siteConfig } from "@/app/config/site";
+import StorefrontChrome from "@/app/components/layout/StorefrontChrome";
 import Cart from "@/app/components/ui/cart/Cart";
 import "./globals.css";
 
@@ -36,16 +34,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${dmSans.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
-      
       <body className="min-h-full flex flex-col">
-        <Navbar/>
-        {children}
+        <StorefrontChrome>{children}</StorefrontChrome>
         <Suspense fallback={null}>
           <Cart />
         </Suspense>
-        <WhatsAppIcon />
-      <Footer />
-        
       </body>
     </html>
   );

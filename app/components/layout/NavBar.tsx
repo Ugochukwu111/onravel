@@ -25,12 +25,12 @@ const navigation = [
 const mobileAccountLinks = [
   {
     label: "Profile",
-    href: "/profile",
+    href: "/account",
     icon: UserRound,
   },
   {
     label: "Orders",
-    href: "/orders",
+    href: "/account/orders",
     icon: Package,
   },
 ];
@@ -210,7 +210,7 @@ export default function Navbar() {
 
               <li>
                 <Link
-                  href="/profile"
+                  href="/account"
                   aria-label="Profile"
                   title="Profile"
                   className="flex size-10 items-center justify-center text-brand-black transition-colors duration-200 hover:text-brand-bronze focus-visible:text-brand-bronze"
@@ -225,7 +225,7 @@ export default function Navbar() {
 
               <li>
                 <Link
-                  href="/orders"
+                  href="/account/orders"
                   aria-label="Orders"
                   title="Orders"
                   className="flex size-10 items-center justify-center text-brand-black transition-colors duration-200 hover:text-brand-bronze focus-visible:text-brand-bronze"
