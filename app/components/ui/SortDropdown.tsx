@@ -20,6 +20,7 @@ type SortDropdownProps = {
   onChange: (value: string) => void;
   options?: readonly SortOption[];
   label?: string;
+  className?: string;
 };
 
 export default function SortDropdown({
@@ -27,6 +28,7 @@ export default function SortDropdown({
   onChange,
   options = productSortOptions,
   label = "Sort by",
+  className,
 }: SortDropdownProps) {
   return (
     <label className="relative inline-flex items-center">
@@ -34,7 +36,7 @@ export default function SortDropdown({
       <select
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className="!w-auto min-w-40 appearance-none border border-neutral-300 bg-transparent py-2.5 pl-4 pr-10 text-sm text-brand-black focus:border-brand-black focus:outline-none"
+        className={className ?? "!w-auto min-w-40 appearance-none border border-neutral-300 bg-transparent py-2.5 pl-4 pr-10 text-sm text-brand-black focus:border-brand-black focus:outline-none"}
       >
         {options.map((option) => (
           <option key={option.value} value={option.value}>
