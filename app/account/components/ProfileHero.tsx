@@ -1,4 +1,11 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import ProfileAvatar from "@/app/account/components/ProfileAvatar";
+import {
+  readStoredProfile,
+  type AccountProfile,
+} from "@/app/account/components/account-data";
 
 type ProfileHeroProps = {
   fullName?: string | null;
@@ -9,6 +16,15 @@ export default function ProfileHero({
   fullName,
   imageUrl,
 }: ProfileHeroProps) {
+  const [profile, setProfile] = useState<AccountProfile | null>(null);
+
+  useEffect(() => {
+    setProfile(readStoredProfile());
+  }, []);
+
+  const resolvedName = fullName ?? profile?.fullName ?? null;
+  const resolvedImage = imageUrl ?? profile?.profileImage ?? null;
+
   return (
     <section
       aria-label="Account profile"
@@ -22,10 +38,10 @@ export default function ProfileHero({
       </span>
 
       <div className="relative z-10 flex max-w-full flex-col items-center text-center">
-        <ProfileAvatar imageUrl={imageUrl} name={fullName} />
-        {fullName ? (
+        <ProfileAvatar imageUrl={resolvedImage} name={resolvedName} />
+        {resolvedName ? (
           <h1 className="mt-4 max-w-full break-words font-heading text-[clamp(1.75rem,4vw,2.5rem)] font-normal leading-tight tracking-normal">
-            {fullName}
+            {resolvedName}
           </h1>
         ) : (
           <p className="mt-4 text-sm text-neutral-600">
